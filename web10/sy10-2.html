@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sy10-2</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .image{
+            position: relative;
+            width: 500px;
+            height:400px;
+            margin:0 auto;
+        }
+        .left,.right{
+            position:absolute;
+            width: 500px;
+            height:400px;
+            left:0px;
+            top:0px;
+            background: url("images/scene.png")no-repeat;
+        }
+        .left{
+            -webkit-mask: url("images/heart.png")no-repeat;
+            animation:movetoright 3s  0.2s ease-out forwards;
+        }
+        .right{
+            -webkit-mask: url("images/heart.png")no-repeat;
+            animation:movetoleft 3s 0.2s ease-out forwards;
+        }
+        @keyframes movetoleft {
+             0%{-webkit-mask: url("images/heart.png")right top no-repeat}
+             100%{-webkit-mask: url("images/heart.png")center no-repeat}
+
+         }
+        @keyframes movetoright {
+            0%{-webkit-mask: url("images/heart.png")left top no-repeat}
+            100%{-webkit-mask: url("images/heart.png")center no-repeat}
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="image">
+    <div class="left"></div>
+    <div class="right"></div>
+
+</div>
+
+
+</body>
+</html>
